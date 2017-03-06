@@ -3,6 +3,11 @@ class Mycar
 	attr_accessor :color
 	attr_reader :year
 
+	def self.gas_mileage(gallons, miles)
+		puts "#{miles/gallons} miles per gallon of gas."
+
+	end		
+
 	def initialize(year, model, color)
 		@year = year
 		@model = model
@@ -34,19 +39,13 @@ class Mycar
 		
 	end
 
-	def spray_paint(color) #除ex2直接改變參數的方法外，可由另外定義的method來改變原initialize的變數，並呼叫字串來提示使用者
+	def spray_paint(color)
 		self.color = color
-		puts "Your new #{color} paint job looks great !"
 
 	end
 end
 
-car = Mycar.new('1987', 'TOYOTA','Navy')
-car.color = 'black'
-puts car.color
-puts car.year
-car.spray_paint('grey')
-puts car.color
+Mycar.gas_mileage(16,351)
 
 
 

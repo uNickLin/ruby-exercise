@@ -1,7 +1,7 @@
 class Mycar
 
-	attr_accessor :color
-	attr_reader :year
+	attr_accessor :color # 因為color並不直接為class Mycar底下的變數，必須透過initialize(color)來呼叫，但透過attr_accessor可直接呼叫底下的color並修改參數
+	attr_reader :year    # 與attr_accessor不同的是，reader僅能呼叫不同層級下的變數，但無法賦予新的參數
 
 	def initialize(year, model, color)
 		@year = year
@@ -36,9 +36,9 @@ class Mycar
 
 end
 
-car = Mycar.new('1987', 'TOYOTA','Navy')
+car = Mycar.new('1987', 'TOYOTA','Navy') #新增物件：year = '1987', modle = 'TOYOTA', color = 'Navy'
 
-car.color = "black"
+car.color = "black" # 因color為attr_accessor，可直接修改參數為‘black'
 puts car.color
 puts car.year
 
